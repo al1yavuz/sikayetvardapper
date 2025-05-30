@@ -1,0 +1,10 @@
+﻿@model List<Post>
+@{
+    ViewData["Title"] = "Müşteri Memnuniyetinin Adresi - ŞikayetVar";
+}
+
+@foreach(var post in Model) {
+    <h3><a href="/home/detail/@post.Id">@post.Title</a></h3>
+    <p>@post.Summary</p>
+    <hr />
+}

@@ -1,0 +1,24 @@
+﻿@model List<sikayetvar.Models.Post>
+
+@{
+    ViewData["Title"] = "Arama Sonuçları";
+}
+
+<h2>Arama Sonuçları</h2>
+
+@if (Model != null && Model.Any())
+{
+    <div class="list-group">
+        @foreach (var post in Model)
+        {
+            <a href="@Url.Action("Detail", "Home", new { id = post.Id })" class="list-group-item list-group-item-action">
+                <h5>@post.Title</h5>
+                <p>@post.Content</p>
+            </a>
+        }
+    </div>
+}
+else
+{
+    <p>Aradığınız kriterlere uygun sonuç bulunamadı.</p>
+}
